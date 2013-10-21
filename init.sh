@@ -1,8 +1,9 @@
 #!/bin/sh
 
-HOME=`pwd`
-ln -s ./files/dircolors $HOME/.dircolors
-ln -s ./files/gitignore $HOME/.gitignore
-ln -s ./files/inputrc $HOME/.inputrc
-ln -s ./files/screenrc $HOME/.screenrc
-ln -s ./files/vimrc $HOME/.vimrc
+WORK_DIR=`dirname $0`
+
+ln -sfn $WORK_DIR/files/dircolors $HOME/.dircolors
+ln -sfn $WORK_DIR/files/gitignore $HOME/.gitignore
+ln -sfn $WORK_DIR/files/inputrc $HOME/.inputrc
+ln -sfn $WORK_DIR/files/screenrc $HOME/.screenrc
+ln -sfn $WORK_DIR/files/vimrc $HOME/.vimrc
