@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	lo = log --oneline --no-merges
+	ln = log --name-status
+	cp = cherry-pick
+	cpx = cherry-pick -x
+	current-branch = rev-parse --abbrev-ref HEAD
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+
