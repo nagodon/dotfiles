@@ -1,15 +1,43 @@
-[alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	lo = log --oneline --no-merges
-	ln = log --name-status
-	cp = cherry-pick
-	cpx = cherry-pick -x
-	current-branch = rev-parse --abbrev-ref HEAD
-[core]
-	excludesfile = ~/.gitignore
 [color]
 	ui = auto
-
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[alias]
+	co = checkout
+	cb = checkout -b
+	ci = commit
+	ca = commit -a
+	cam = commit -a --amend
+	sh = show
+	st = status
+	ssb = status --short --branch
+	b = branch
+	ba = branch -a
+	l = log
+	ls = log --stat
+	lo = log --oneline
+	lp = log -p
+	lns = log --name-status
+	lno = log --name-only
+	lg = log --graph --decorate --oneline
+	cp = cherry-pick
+	cpx = cherry-pick -x
+	dw = diff --color-words
+	d1 = diff HEAD~1
+	d2 = diff HEAD~2
+	d3 = diff HEAD~3
+	d4 = diff HEAD~4
+	d5 = diff HEAD~5
+	pr = pull --rebase
+	patch = diff --no-prefix
+	current-branch = rev-parse --abbrev-ref HEAD
+	nothing = reset --hard HEAD
+	f = fetch
+	fp = fetch --prune
+	w = whatchanged
