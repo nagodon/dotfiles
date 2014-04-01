@@ -9,7 +9,7 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 filetype plugin on
 
-Bundle 'git://github.com/Shougo/neocomplcache.git'
+Bundle 'git://github.com/Shougo/neocomplete.git'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/mattn/zencoding-vim.git'
 Bundle 'git://github.com/shanlalit/vim-autoclose.git'
@@ -128,7 +128,13 @@ if g:colors_name ==? 'wombat256'
   hi Visual gui=none guifg=khaki guibg=olivedrab
 endif
 
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_ignore_case = 1
+let g:neocomplete#enable_smart_case = 1
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:ref_phpmanual_path = $HOME . '/work/src/php/php-chunked-xhtml/'
 let g:NERDTreeShowHidden = 1
 let g:user_zen_expandabbr_key = '<C-e>'
