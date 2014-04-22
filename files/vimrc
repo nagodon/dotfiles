@@ -25,6 +25,7 @@ Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'quickrun.vim'
 Bundle 'ref.vim'
 Bundle 'osyo-manga/vim-over'
+Bundle 'git://github.com/thinca/vim-qfreplace.git'
 
 "-----------------------------------------------------------------------------
 " 文字コード関連
