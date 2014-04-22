@@ -44,9 +44,7 @@ set fileencoding=utf-8
 set fileformats=unix,dos,mac
 
 " □とか○の文字があってもカーソル位置がずれないようにする
-if exists('&ambiwidth')
-	set ambiwidth=double
-endif
+set ambiwidth=double
 
 "-----------------------------------------------------------------------------
 " コマンドライン
@@ -61,6 +59,8 @@ set showcmd
 "
 "オートインデントする
 set autoindent
+"自動コメントアウト防止
+autocmd FileType * setlocal formatoptions-=ro
 
 "-----------------------------------------------------------------------------
 " 検索関連
