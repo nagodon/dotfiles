@@ -28,9 +28,11 @@ Bundle 'osyo-manga/vim-over'
 Bundle 'git://github.com/thinca/vim-qfreplace.git'
 
 "-----------------------------------------------------------------------------
-" スワップファイル関連
+" バックアップ関連
 "-----------------------------------------------------------------------------
-set directory=~/.vim/tmp
+set viminfo+=n~/.vim/
+set directory=~/.vim/tmp/swap
+set backupdir=~/.vim/tmp/backup
 
 "-----------------------------------------------------------------------------
 " 文字コード関連
