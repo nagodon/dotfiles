@@ -61,8 +61,6 @@ set showcmd
 set autoindent
 "自動コメントアウト防止
 autocmd FileType * setlocal formatoptions-=ro
-"貼り付け時のオートインデント回避
-set paste
 
 "-----------------------------------------------------------------------------
 " 検索関連
