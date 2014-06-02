@@ -59,6 +59,7 @@ set showcmd
 "
 "オートインデントする
 set autoindent
+set smartindent
 "自動コメントアウト防止
 autocmd FileType * setlocal formatoptions-=ro
 set backspace=indent,eol,start
@@ -129,9 +130,9 @@ cnoremap <C-h> <BS>
 inoremap <C-d> <DEL>
 cnoremap <C-d> <DEL>
 
-inoremap {<Enter> {}<Left><CR><CR><BS><CR><UP><Tab>
-inoremap [<Enter> []<Left><CR><CR><BS><CR><UP><Tab>
-inoremap (<Enter> ()<Left><CR><CR><BS><CR><UP><Tab>
+inoremap {<Enter> {}<Left><CR><BS><CR><UP><Tab>
+inoremap [<Enter> []<Left><CR><BS><CR><UP><Tab>
+inoremap (<Enter> ()<Left><CR><BS><CR><UP><Tab>
 
 " NERDTree
 noremap <C-t> :NERDTreeToggle<CR>
