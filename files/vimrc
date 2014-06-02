@@ -61,7 +61,7 @@ set showcmd
 set autoindent
 "自動コメントアウト防止
 autocmd FileType * setlocal formatoptions-=ro
-
+set backspace=indent,eol,start
 "-----------------------------------------------------------------------------
 " 検索関連
 "
@@ -106,9 +106,11 @@ set number
 " 下に移動
 inoremap <C-n> <Down>
 cnoremap <C-n> <Down>
+nnoremap <C-n> <Down>
 " 上に移動
 inoremap <C-p> <Up>
 cnoremap <C-p> <Up>
+nnoremap <C-p> <Up>
 " 左に移動
 inoremap <C-b> <Left>
 cnoremap <C-b> <Left>
@@ -126,6 +128,10 @@ inoremap <C-h> <BS>
 cnoremap <C-h> <BS>
 inoremap <C-d> <DEL>
 cnoremap <C-d> <DEL>
+
+inoremap {<Enter> {}<Left><CR><BS><CR><UP><Tab>
+inoremap [<Enter> []<Left><CR><BS><CR><UP><Tab>
+inoremap (<Enter> ()<Left><CR><BS><CR><UP><Tab>
 
 " NERDTree
 noremap <C-t> :NERDTreeToggle<CR>
