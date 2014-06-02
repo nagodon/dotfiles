@@ -129,9 +129,9 @@ cnoremap <C-h> <BS>
 inoremap <C-d> <DEL>
 cnoremap <C-d> <DEL>
 
-inoremap {<Enter> {}<Left><CR><BS><CR><UP><Tab>
-inoremap [<Enter> []<Left><CR><BS><CR><UP><Tab>
-inoremap (<Enter> ()<Left><CR><BS><CR><UP><Tab>
+inoremap {<Enter> {}<Left><CR><CR><BS><CR><UP><Tab>
+inoremap [<Enter> []<Left><CR><CR><BS><CR><UP><Tab>
+inoremap (<Enter> ()<Left><CR><CR><BS><CR><UP><Tab>
 
 " NERDTree
 noremap <C-t> :NERDTreeToggle<CR>
