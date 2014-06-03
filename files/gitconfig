@@ -7,7 +7,7 @@
 	grep = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = ~/bin/vim
 [alias]
 	co = checkout
 	cb = checkout -b
