@@ -10,6 +10,8 @@ call vundle#rc()
 filetype plugin on
 
 Bundle 'git://github.com/Shougo/neocomplete.git'
+Bundle 'git://github.com/Shougo/neosnippet.git'
+Bundle 'git://github.com/Shougo/neosnippet-snippets.git'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/mattn/emmet-vim.git'
 Bundle 'git://github.com/shanlalit/vim-autoclose.git'
@@ -139,6 +141,22 @@ inoremap (<Enter> ()<Left><CR><BS><CR><UP><Tab>
 
 " NERDTree
 noremap <C-t> :NERDTreeToggle<CR>
+
+" NeoSnippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 "配色設定
 colorscheme wombat256
