@@ -11,7 +11,7 @@ filetype plugin on
 
 Bundle 'git://github.com/Shougo/neocomplete.git'
 Bundle 'git://github.com/thinca/vim-ref.git'
-Bundle 'git://github.com/mattn/zencoding-vim.git'
+Bundle 'git://github.com/mattn/emmet-vim.git'
 Bundle 'git://github.com/shanlalit/vim-autoclose.git'
 Bundle 'git://github.com/scrooloose/nerdtree.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
@@ -26,6 +26,9 @@ Bundle 'quickrun.vim'
 Bundle 'ref.vim'
 Bundle 'osyo-manga/vim-over'
 Bundle 'git://github.com/thinca/vim-qfreplace.git'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'vim-scripts/AnsiEsc.vim'
+Bundle 'bronson/vim-trailing-whitespace'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -143,6 +146,10 @@ if g:colors_name ==? 'wombat256'
   hi Visual gui=none guifg=khaki guibg=olivedrab
 endif
 
+let g:indent_guides_enable_on_vim_startup = 1
+let g:NERDTreeShowHidden = 1
+let g:ref_phpmanual_path = $HOME . '/work/src/php/php-chunked-xhtml/'
+
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
@@ -150,13 +157,26 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
-let g:ref_phpmanual_path = $HOME . '/work/src/php/php-chunked-xhtml/'
-let g:NERDTreeShowHidden = 1
-let g:user_zen_expandabbr_key = '<C-e>'
-let g:user_zen_settings = {
-\   'html': {
-\       'empty_elements': 'input,br,hr'
-\   }
+
+let g:use_emmet_complete_tag = 1
+let g:user_emmet_mode='a'
+let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_settings = {
+\  'lang': 'ja',
+\  'html' : {
+\    'filters' : 'html',
+\    'indentation' : '  '
+\  },
+\  'css' : {
+\    'filters' : 'fc',
+\  },
+\  'xml' : {
+\    'extends' : 'html',
+\  },
+\  'php': {
+\    'extends': 'html',
+\    'filters': 'html,c'
+\  }
 \}
 
 function! PhpSyntax()
