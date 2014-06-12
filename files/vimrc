@@ -179,14 +179,6 @@ let g:user_emmet_settings = {
 \  }
 \}
 
-function! PhpSyntax()
-  let result = system( &ft . ' -l ' . bufname(""))
-  echo result
-endfunction
-nmap ps :call PhpSyntax()<CR>
-nmap pcd :call PhpCsFixerFixDirectory()<CR>
-nmap pcf :call PhpCsFixerFixFile()<CR>
-
 function! s:RemoveDust()
   let cursor = getpos(".")
   let str = getline(line("."))
@@ -201,3 +193,8 @@ function! s:RemoveDust()
   unlet str
 endfunction
 autocmd InsertLeave * :call s:RemoveDust()
+
+autocmd FileType php set makeprg=php\ -l\ %
+autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif | redraw!
+autocmd VimEnter * :FixWhitespace
+autocmd BufRead *.log :AnsiEsc
