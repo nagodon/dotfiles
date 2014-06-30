@@ -154,6 +154,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
+" tagsジャンプ
+nnoremap <C-]> g<C-]>
+
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
