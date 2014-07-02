@@ -5,28 +5,18 @@ filetype off
 
 " NeoBundle関連
 if has('vim_starting')
-  set nocompatible               " Be iMproved
- " Required:
- set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
 call neobundle#end()
 
-" Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
 
 NeoBundle 'git://github.com/Shougo/neocomplete.git'
@@ -88,9 +78,11 @@ set showcmd
 "
 "オートインデントする
 set autoindent
+"スマートインデント
 set smartindent
 "自動コメントアウト防止
 autocmd FileType * setlocal formatoptions-=ro
+"バックスペースの挙動
 set backspace=indent,eol,start
 "-----------------------------------------------------------------------------
 " 検索関連
@@ -109,8 +101,11 @@ set noincsearch
 "
 "シンタックスハイライトを有効にする
 syntax enable
+"バックグラウンドの設定
 set background=dark
+"カラースキームの設定
 colorscheme solarized
+let g:solarized_termcolors=256
 "タブの左側にカーソル表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set list
@@ -185,12 +180,6 @@ nnoremap <C-]> g<C-]>
 
 if has('conceal')
   set conceallevel=2 concealcursor=i
-endif
-
-"配色設定
-colorscheme wombat256
-if g:colors_name ==? 'wombat256'
-  hi Visual gui=none guifg=khaki guibg=olivedrab
 endif
 
 let g:indent_guides_enable_on_vim_startup = 1
