@@ -3,34 +3,57 @@
 
 filetype off
 
-" Vundle関連
-"
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-filetype plugin on
+" NeoBundle関連
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+ " Required:
+ set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-Bundle 'git://github.com/Shougo/neocomplete.git'
-Bundle 'git://github.com/Shougo/neosnippet.git'
-Bundle 'git://github.com/Shougo/neosnippet-snippets.git'
-Bundle 'git://github.com/thinca/vim-ref.git'
-Bundle 'git://github.com/mattn/emmet-vim.git'
-Bundle 'git://github.com/shanlalit/vim-autoclose.git'
-Bundle 'git://github.com/scrooloose/nerdtree.git'
-Bundle 'git://github.com/tpope/vim-surround.git'
-Bundle 'git://github.com/vim-scripts/molokai.git'
-Bundle 'git://github.com/jnurmine/Zenburn.git'
-Bundle 'git://github.com/cschlueter/vim-wombat.git'
-Bundle 'https://github.com/everzet/phpfolding.vim.git'
-Bundle 'https://github.com/stephpy/vim-php-cs-fixer.git'
-Bundle 'https://github.com/tpope/vim-fugitive.git'
-Bundle 'git://github.com/mileszs/ack.vim.git'
-Bundle 'quickrun.vim'
-Bundle 'ref.vim'
-Bundle 'osyo-manga/vim-over'
-Bundle 'git://github.com/thinca/vim-qfreplace.git'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'vim-scripts/AnsiEsc.vim'
-Bundle 'bronson/vim-trailing-whitespace'
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+NeoBundle 'git://github.com/Shougo/neocomplete.git'
+NeoBundle 'git://github.com/Shougo/neosnippet.git'
+NeoBundle 'git://github.com/Shougo/neosnippet-snippets.git'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
+NeoBundle 'git://github.com/mattn/emmet-vim.git'
+NeoBundle 'git://github.com/shanlalit/vim-autoclose.git'
+NeoBundle 'git://github.com/scrooloose/nerdtree.git'
+NeoBundle 'git://github.com/tpope/vim-surround.git'
+NeoBundle 'git://github.com/vim-scripts/molokai.git'
+NeoBundle 'git://github.com/jnurmine/Zenburn.git'
+NeoBundle 'git://github.com/cschlueter/vim-wombat.git'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'https://github.com/everzet/phpfolding.vim.git'
+NeoBundle 'https://github.com/stephpy/vim-php-cs-fixer.git'
+NeoBundle 'https://github.com/tpope/vim-fugitive.git'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'git://github.com/mileszs/ack.vim.git'
+NeoBundle 'quickrun.vim'
+NeoBundle 'ref.vim'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'bling/vim-airline'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -43,6 +66,7 @@ set backupdir=~/.vim/tmp/backup
 " 文字コード関連
 "
 " 文字コード
+scriptencoding=utf-8
 set fileencoding=utf-8
 
 " 改行コードの自動認識
@@ -84,9 +108,9 @@ set noincsearch
 " 装飾関連
 "
 "シンタックスハイライトを有効にする
-if has("syntax")
-	syntax on
-endif
+syntax enable
+set background=dark
+colorscheme solarized
 "タブの左側にカーソル表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set list
@@ -101,10 +125,12 @@ set showmatch
 set hlsearch
 "ステータスラインを常に表示
 set laststatus=2
-"ステータスラインに文字コードと改行文字を表示する
-set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'.fugitive#statusline()}%=%l,%c%V[%L]%8P
 "行番号の表示
 set number
+"色設定
+set t_Co=256
+"フォント設定
+set guifont=Ricty\ Regular\ for\ Powerline:h14
 
 "-----------------------------------------------------------------------------
 " キーバインド定義
@@ -199,6 +225,51 @@ let g:user_emmet_settings = {
 \    'filters': 'html,c'
 \  }
 \}
+
+let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
+let g:Powerline_symbols = 'fancy'
+
+let g:airline_theme='solarized'
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+let g:airline_linecolumn_prefix = '⭡'
+let g:airline_branch_prefix = '⭠'
+let g:airline_linecolumn_prefix = ''
+let g:airline_inactive_collapse = 0
+
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮀'
+
+let g:airline_section_a = airline#section#create(['mode','','branch'])
+let g:airline_section_b =
+      \ '%{airline#extensions#branch#get_head()}' .
+      \ '%{""!=airline#extensions#branch#get_head()?("  " . g:airline_left_alt_sep . " "):""}' .
+      \ '%t%( %M%)'
+let g:airline_section_c = ''
+let g:airline_section_x =
+      \ '%{strlen(&fileformat)?&fileformat:""}'.s:sep.
+      \ '%{strlen(&fenc)?&fenc:&enc}'.s:sep.
+      \ '%{strlen(&filetype)?&filetype:"no ft"}'
+let g:airline_section_y = '%3p%%'
+let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
+
+function! AirLineForce(...)
+  let g:airline_mode_map.__ = ''
+  let w:airline_render_left = 1
+  let w:airline_render_right = 1
+endfunction
+
+augroup AirLineForce
+  autocmd!
+  autocmd VimEnter * call add(g:airline_statusline_funcrefs, function('AirLineForce'))
+augroup END
 
 function! s:RemoveDust()
   let cursor = getpos(".")
