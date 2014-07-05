@@ -19,31 +19,31 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-NeoBundle 'git://github.com/Shougo/neocomplete.git'
-NeoBundle 'git://github.com/Shougo/neosnippet.git'
-NeoBundle 'git://github.com/Shougo/neosnippet-snippets.git'
-NeoBundle 'git://github.com/thinca/vim-ref.git'
-NeoBundle 'git://github.com/mattn/emmet-vim.git'
-NeoBundle 'git://github.com/shanlalit/vim-autoclose.git'
-NeoBundle 'git://github.com/scrooloose/nerdtree.git'
-NeoBundle 'git://github.com/tpope/vim-surround.git'
-NeoBundle 'git://github.com/vim-scripts/molokai.git'
-NeoBundle 'git://github.com/jnurmine/Zenburn.git'
-NeoBundle 'git://github.com/cschlueter/vim-wombat.git'
+NeoBundle 'Shougo/neocomplete.git'
+NeoBundle 'Shougo/neosnippet.git'
+NeoBundle 'Shougo/neosnippet-snippets.git'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'thinca/vim-ref.git'
+NeoBundle 'mattn/emmet-vim.git'
+NeoBundle 'shanlalit/vim-autoclose.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'https://github.com/everzet/phpfolding.vim.git'
-NeoBundle 'https://github.com/stephpy/vim-php-cs-fixer.git'
-NeoBundle 'https://github.com/tpope/vim-fugitive.git'
+NeoBundle 'everzet/phpfolding.vim.git'
+NeoBundle 'stephpy/vim-php-cs-fixer.git'
+NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'git://github.com/mileszs/ack.vim.git'
+NeoBundle 'mileszs/ack.vim.git'
 NeoBundle 'quickrun.vim'
 NeoBundle 'ref.vim'
 NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
+NeoBundle 'thinca/vim-qfreplace.git'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'ujihisa/unite-colorscheme'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -104,8 +104,7 @@ syntax enable
 "バックグラウンドの設定
 set background=dark
 "カラースキームの設定
-colorscheme solarized
-let g:solarized_termcolors=256
+colorscheme shobogenzo
 "タブの左側にカーソル表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set list
