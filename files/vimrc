@@ -53,6 +53,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'gregsexton/gitv'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
