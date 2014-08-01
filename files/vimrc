@@ -55,6 +55,7 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'vim-scripts/greplace.vim'
+NeoBundle 't9md/vim-textmanip'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
