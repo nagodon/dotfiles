@@ -10,6 +10,7 @@
 	editor = ~/bin/vim
 [alias]
 	co = checkout
+	pco = !git checkout `git branch | peco`
 	cb = checkout -b
 	ci = commit
 	ca = commit -a
@@ -19,6 +20,8 @@
 	ssb = status --short --branch
 	b = branch
 	ba = branch -a
+	bd = branch -d
+	pbd = !git branch -d `git branch | peco`
 	l = log
 	ls = log --stat
 	lo = log --oneline
@@ -29,6 +32,7 @@
 	cp = cherry-pick
 	cpx = cherry-pick -x
 	dw = diff --color-words
+	dc = diff --cached
 	d1 = diff HEAD~1
 	d2 = diff HEAD~2
 	d3 = diff HEAD~3
