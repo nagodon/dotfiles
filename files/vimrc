@@ -57,6 +57,7 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'vim-scripts/greplace.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'cohama/agit.vim'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
