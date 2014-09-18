@@ -9,6 +9,8 @@
 	excludesfile = ~/.gitignore
 	editor = ~/bin/vim
 [alias]
+	a = add
+	ap = add -p
 	co = checkout
 	pco = !git checkout `git branch | peco`
 	cb = checkout -b
@@ -21,7 +23,10 @@
 	b = branch
 	ba = branch -a
 	bd = branch -d
+	bD = branch -D
+	bvv = branch -vv
 	pbd = !git branch -d `git branch | peco`
+	pbD = !git branch -D `git branch | peco`
 	l = log
 	ls = log --stat
 	lo = log --oneline
@@ -39,6 +44,7 @@
 	d4 = diff HEAD~4
 	d5 = diff HEAD~5
 	pr = pull --rebase
+	pu = push -u
 	patch = diff --no-prefix
 	current-branch = rev-parse --abbrev-ref HEAD
 	nothing = reset --hard HEAD
