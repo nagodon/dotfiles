@@ -57,6 +57,7 @@ NeoBundle 'vim-scripts/greplace.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'cohama/agit.vim'
+NeoBundle 'soramugi/auto-ctags.vim'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -196,6 +197,10 @@ nnoremap <C-]> g<C-]>
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git']
+let g:auto_ctags_tags_args = "-R --tag-relative=yes --sort=yes --languages=php --regex-php='/const ([a-zA-Z0-9_]+)/\\1/c/'"
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:NERDTreeShowHidden = 1
