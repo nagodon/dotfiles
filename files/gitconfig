@@ -51,3 +51,4 @@
 	f = fetch
 	fp = fetch --prune
 	w = whatchanged
+	rb = rebase
