@@ -62,9 +62,9 @@ NeoBundle 'soramugi/auto-ctags.vim'
 "-----------------------------------------------------------------------------
 " バックアップ関連
 "-----------------------------------------------------------------------------
-set viminfo+=n~/.vim/
-set directory=~/.vim/tmp/swap
-set backupdir=~/.vim/tmp/backup
+set viminfo+=n$HOME/.vim/.viminfo
+set directory=$HOME/.vim/tmp/swap
+set backupdir=$HOME/.vim/tmp/backup
 
 "-----------------------------------------------------------------------------
 " 文字コード関連
