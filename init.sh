@@ -9,6 +9,7 @@ ln -sfn $WORK_DIR/files/inputrc $HOME/.inputrc
 ln -sfn $WORK_DIR/files/editrc $HOME/.editrc
 ln -sfn $WORK_DIR/files/screenrc $HOME/.screenrc
 ln -sfn $WORK_DIR/files/vimrc $HOME/.vimrc
+ln -sfn $WORK_DIR/files/tmux.conf $HOME/.tmux.conf
 
 if [ ! -d x"$HOME/.vim" -o ! -d x"$HOME/.vim/tmp" ]; then
 	mkdir -p $HOME/.vim/tmp/{swap,backup}
