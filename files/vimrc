@@ -275,11 +275,6 @@ function! AirLineForce(...)
   let w:airline_render_right = 1
 endfunction
 
-augroup AirLineForce
-  autocmd!
-  autocmd VimEnter * call add(g:airline_statusline_funcrefs, function('AirLineForce'))
-augroup END
-
 function! s:RemoveDust()
   let cursor = getpos(".")
   let str = getline(line("."))
@@ -293,9 +288,20 @@ function! s:RemoveDust()
   unlet cursor
   unlet str
 endfunction
-autocmd InsertLeave * :call s:RemoveDust()
 
+function! s:agit_setting()
+  nmap <buffer> cp <Plug>(agit-git-cherry-pick)
+  nmap <buffer> rv <Plug>(agit-git-revert)
+endfunction
+
+augroup AirLineForce
+  autocmd!
+  autocmd VimEnter * call add(g:airline_statusline_funcrefs, function('AirLineForce'))
+augroup END
+autocmd InsertLeave * :call s:RemoveDust()
 autocmd FileType php set makeprg=php\ -l\ %
 autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif | redraw!
 autocmd VimEnter * :FixWhitespace
 autocmd BufRead *.log :AnsiEsc
+autocmd FileType agit call s:agit_setting()
+
