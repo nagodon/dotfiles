@@ -19,6 +19,7 @@
 	cam = commit -a --amend
 	sh = show
 	st = status
+	ss = status -s
 	ssb = status --short --branch
 	b = branch
 	ba = branch -a
@@ -36,6 +37,7 @@
 	lg = log --graph --decorate --oneline
 	cp = cherry-pick
 	cpx = cherry-pick -x
+	df = diff
 	dw = diff --color-words
 	dc = diff --cached
 	d1 = diff HEAD~1
@@ -43,6 +45,7 @@
 	d3 = diff HEAD~3
 	d4 = diff HEAD~4
 	d5 = diff HEAD~5
+	pdf = !git diff `git status -s | sed -e 's/^...//' | peco`
 	pr = pull --rebase
 	pu = push -u
 	patch = diff --no-prefix
@@ -52,3 +55,4 @@
 	fp = fetch --prune
 	w = whatchanged
 	rb = rebase
+	re = reset
