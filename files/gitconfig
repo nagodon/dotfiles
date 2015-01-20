@@ -11,6 +11,8 @@
 [alias]
 	a = add
 	ap = add -p
+	pa = !git add `git status -s | sed -e 's/^...//' | peco`
+	pap = !git add -p `git status -s | sed -e 's/^...//' | peco`
 	co = checkout
 	pco = !git checkout `git branch | peco`
 	cb = checkout -b
