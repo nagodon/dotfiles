@@ -58,6 +58,7 @@ NeoBundle 't9md/vim-textmanip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'joonty/vdebug'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
