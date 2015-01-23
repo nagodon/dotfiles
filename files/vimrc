@@ -170,6 +170,7 @@ cnoremap <C-h> <BS>
 inoremap <C-d> <DEL>
 cnoremap <C-d> <DEL>
 
+" カーソル
 inoremap {<Enter> {}<Left><CR><BS><CR><UP><Tab>
 inoremap [<Enter> []<Left><CR><BS><CR><UP><Tab>
 inoremap (<Enter> ()<Left><CR><BS><CR><UP><Tab>
@@ -194,6 +195,13 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " tagsジャンプ
 nnoremap <C-]> g<C-]>
+
+" リサイズ
+nnoremap = <C-w>=
+nnoremap > <C-w>>
+nnoremap < <C-w><
+nnoremap + <C-w>+
+nnoremap - <C-w>-
 
 if has('conceal')
   set conceallevel=2 concealcursor=i
