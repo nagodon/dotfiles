@@ -127,6 +127,7 @@ colorscheme shobogenzo
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set list
 "タブ幅を設定する
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 "入力中のコマンドをステータスに表示する
@@ -323,4 +324,5 @@ autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else
 autocmd VimEnter * :FixWhitespace
 autocmd BufRead *.log :AnsiEsc
 autocmd FileType agit call s:agit_setting()
+autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2
 
