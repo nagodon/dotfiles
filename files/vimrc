@@ -63,6 +63,7 @@ NeoBundle 'adoy/vim-php-refactoring-toolbox'
 NeoBundle 'nagodon/pdv'
 NeoBundle 'tobyS/vmustache'
 NeoBundle 'sirver/ultisnips'
+NeoBundle 'thinca/vim-localrc'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -122,8 +123,6 @@ set noincsearch
 syntax enable
 "バックグラウンドの設定
 set background=dark
-"カラースキームの設定
-colorscheme shobogenzo
 "タブの左側にカーソル表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set list
@@ -327,3 +326,4 @@ autocmd BufRead *.log :AnsiEsc
 autocmd FileType agit call s:agit_setting()
 autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2
 
+call localrc#load('.local.vimrc', $HOME)
