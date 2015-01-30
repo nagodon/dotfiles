@@ -59,6 +59,9 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'joonty/vdebug'
+NeoBundle 'nagodon/pdv'
+NeoBundle 'tobyS/vmustache'
+NeoBundle 'sirver/ultisnips'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -203,6 +206,12 @@ nnoremap < <C-w><
 nnoremap + <C-w>+
 nnoremap - <C-w>-
 
+" pdv
+nnoremap <C-a>n :call pdv#DocumentWithSnip()<CR>
+nnoremap <C-a>b <S-a><CR>{<CR>}<UP><UP><Esc>:call pdv#DocumentWithSnip()<CR>
+inoremap <C-a>n <Esc>:call pdv#DocumentWithSnip()<CR>
+inoremap <C-a>b <CR>{<CR>}<UP><UP><Esc>:call pdv#DocumentWithSnip()<CR>
+
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
@@ -214,6 +223,7 @@ let g:auto_ctags_tags_args = "-R --tag-relative=yes --sort=yes --languages=php -
 let g:indent_guides_enable_on_vim_startup = 1
 let g:NERDTreeShowHidden = 1
 let g:ref_phpmanual_path = $HOME . '/work/src/php/php-chunked-xhtml/'
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
