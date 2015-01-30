@@ -64,6 +64,7 @@ NeoBundle 'nagodon/pdv'
 NeoBundle 'tobyS/vmustache'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'thinca/vim-localrc'
+NeoBundle 'scrooloose/syntastic.git'
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
@@ -295,6 +296,15 @@ function! AirLineForce(...)
   let w:airline_render_right = 1
 endfunction
 
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = { 'mode': 'passive',
+    \ 'active_filetypes': ['php', 'javascript', 'json'],
+    \ 'passive_filetypes': []
+    \ }
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_php_checkers = ['php', 'phpcs']
+
 function! s:RemoveDust()
   let cursor = getpos(".")
   let str = getline(line("."))
@@ -319,8 +329,6 @@ augroup AirLineForce
   autocmd VimEnter * call add(g:airline_statusline_funcrefs, function('AirLineForce'))
 augroup END
 autocmd InsertLeave * :call s:RemoveDust()
-autocmd FileType php set makeprg=php\ -l\ %
-autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif | redraw!
 autocmd VimEnter * :FixWhitespace
 autocmd BufRead *.log :AnsiEsc
 autocmd FileType agit call s:agit_setting()
