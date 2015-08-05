@@ -12,11 +12,6 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-call neobundle#end()
-
-filetype plugin indent on
-
 NeoBundleCheck
 
 NeoBundle 'Shougo/neocomplete.git'
@@ -65,6 +60,10 @@ NeoBundle 'tobyS/vmustache'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'scrooloose/syntastic.git'
+
+call neobundle#end()
+
+filetype plugin indent on
 
 "-----------------------------------------------------------------------------
 " バックアップ関連
