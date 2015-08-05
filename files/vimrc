@@ -63,8 +63,6 @@ NeoBundle 'scrooloose/syntastic.git'
 
 call neobundle#end()
 
-filetype plugin indent on
-
 "-----------------------------------------------------------------------------
 " バックアップ関連
 "-----------------------------------------------------------------------------
@@ -347,3 +345,5 @@ autocmd FileType agit call s:agit_setting()
 autocmd BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2
 
 call localrc#load('.local.vimrc', $HOME)
+
+filetype plugin indent on
