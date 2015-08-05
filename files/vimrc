@@ -31,6 +31,7 @@ NeoBundle 'thinca/vim-ref.git'
 NeoBundle 'mattn/emmet-vim.git'
 NeoBundle 'shanlalit/vim-autoclose.git'
 NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'everzet/phpfolding.vim.git'
@@ -60,6 +61,7 @@ NeoBundle 'tobyS/vmustache'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'ryanoasis/vim-webdevicons'
 
 call neobundle#end()
 
@@ -74,8 +76,7 @@ set backupdir=$HOME/.vim/tmp/backup
 " 文字コード関連
 "
 " 文字コード
-scriptencoding=utf-8
-set fileencoding=utf-8
+set encoding=utf8
 
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
@@ -141,7 +142,7 @@ set number
 "色設定
 set t_Co=256
 "フォント設定
-set guifont=Ricty\ Regular\ for\ Powerline:h14
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h14
 
 "-----------------------------------------------------------------------------
 " キーバインド定義
@@ -317,6 +318,32 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_php_checkers = ['php', 'phpcs']
+
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
 function! s:RemoveDust()
   let cursor = getpos(".")
