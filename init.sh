@@ -7,6 +7,7 @@ ln -sfn $WORK_DIR/files/gitconfig $HOME/.gitconfig
 ln -sfn $WORK_DIR/files/gitignore $HOME/.gitignore
 ln -sfn $WORK_DIR/files/inputrc $HOME/.inputrc
 ln -sfn $WORK_DIR/files/editrc $HOME/.editrc
+ln -sfn $WORK_DIR/files/editorconfig $HOME/.editorconfig
 ln -sfn $WORK_DIR/files/screenrc $HOME/.screenrc
 ln -sfn $WORK_DIR/files/vimrc $HOME/.vimrc
 ln -sfn $WORK_DIR/files/tmux.conf $HOME/.tmux.conf
