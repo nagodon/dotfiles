@@ -62,6 +62,7 @@ NeoBundle 'sirver/ultisnips'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'ryanoasis/vim-webdevicons'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'PreserveNoEOL'
 
