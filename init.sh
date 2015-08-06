@@ -11,9 +11,9 @@ ln -sfn $WORK_DIR/files/screenrc $HOME/.screenrc
 ln -sfn $WORK_DIR/files/vimrc $HOME/.vimrc
 ln -sfn $WORK_DIR/files/tmux.conf $HOME/.tmux.conf
 if [ `uname` == "Darwin" ]; then
-	ln -sfn $WORK_DIR/files/tmux-osx.conf $HOME/.tmux-osx.conf
+    ln -sfn $WORK_DIR/files/tmux-osx.conf $HOME/.tmux-osx.conf
 fi
 
 if [ ! -d x"$HOME/.vim" -o ! -d x"$HOME/.vim/tmp" ]; then
-	mkdir -p $HOME/.vim/tmp/{swap,backup}
+    mkdir -p $HOME/.vim/tmp/{swap,backup}
 fi
