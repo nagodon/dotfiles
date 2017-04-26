@@ -58,3 +58,5 @@
 	w = whatchanged
 	rb = rebase
 	re = reset
+[push]
+	default = current
